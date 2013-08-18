@@ -6,28 +6,29 @@ Vagrant configuration for Bpipe (https://code.google.com/p/bpipe/) development.
 Prerequisites
 ----
 - Vagrant (http://www.vagrantup.com/) installed
-- Virtualbox (https://www.virtualbox.org/)installed
+- Virtualbox (https://www.virtualbox.org/) installed
 - Additional binaries for Groovy, Gradle, Java and JavaMail - See Files below.
 
 Quick Start
 ----
-- Add a vagrant box and name it in line with manifests/init.pp, e.g. ubuntu-raring-x64 from  http://cloud-images.ubuntu.com//vagrant/
+Add a vagrant box and name it in line with manifests/init.pp, e.g. ubuntu-raring-x64 
+from http://cloud-images.ubuntu.com/
 
 	vagrant add ubuntu-raring-x64 http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box
-- Download required binries to the files folder
-- Start machine from the top level directory. This will be /vagrant inside your VM. Source code will be in /home/vagrant/bpipe 
+Download required binries to the files folder
+Start machine from the top level directory. This will be /vagrant inside your VM. Source code will be in /home/vagrant/bpipe 
 	vagrant up
-- Enter machine
+Enter machine
 	vagrant ssh
-- Build the source code 
+Build the source code 
 	cd /home/vagrant/bpipe
 	gradle dist
-- Run tests
+Run tests
 	cd /home/vagrant/bpipe/tests
 	./run.sh 
-- Run bpipe
+Run bpipe
 	./bin/bpipe
-- Edit the source, build, commit etc
+Edit the source, build, commit etc
 
 
 Caveats
@@ -38,21 +39,19 @@ Caveats
 
 License
 ----
-MIT license, see LICENSE.txt
+MIT license, see LICENSE
 
 
 ### Customisation ###
 
-Vagrantfile
----
+####Vagrantfile####
 Customise the following:
 
 - config.vm.box -> match this to a named Vagrant box you've added to your system.
 - puppet.facter --> Modify if you wish to clone from a source other than https://code.google.com/p/bpipe/. This will probably require the use of .netrc  
 
 
-Files
-----
+####Files####
 Configuration files that are served to the Puppet provisioner:
 
 	bashrc.txx = ~/.bashrc 		--> based on Ubuntu 13.04 default bashrc, defines JAVE_HOME, GROOVY_HOME and GRADLE_HOME
@@ -69,8 +68,7 @@ per https://code.google.com/p/bpipe/wiki/DevelopmentSetup
 
 Any changes to the Java, Groovy or Gradle versions need to be reflected in manifests/init.pp as well.
 
-Manifest
-----
+####Manifest####
 
 Manifest by default assumes:
 - Gradle 1.0, Groovy 1.8.9 and Java 6u35 x64. 
