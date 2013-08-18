@@ -31,7 +31,7 @@ Add a vagrant box and name it in line with manifests/init.pp, e.g. ubuntu-raring
 
 Copy the required binaries to the files folder, e.g.
 
-	cp /PATH/TO/BPIPE_DOWNLOADS/* files/*
+	cp /PATH/TO/BPIPE_DOWNLOADS/* files/
 
  Start machine from the top level directory. This will be /vagrant inside your VM. Source code will be in /home/vagrant/bpipe 
 
