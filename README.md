@@ -9,14 +9,31 @@ Prerequisites
 - Virtualbox (https://www.virtualbox.org/) installed
 - Additional binaries for Groovy, Gradle, Java and JavaMail - See Files below.
 
+Caveats
+----
+- Tested on Ubuntu 13.04 x64 VM
+- Uses a mixture of shell and Puppet provisioning - the order is fixed at the moment
+- Should work on apt based systems, which are hard coded for some installations
+- GridGain source files are removed from the git clone - include the binary and remove this step from init.pp if you want GridGain support 
+
+
 Quick Start
 ----
-Add a vagrant box and name it in line with manifests/init.pp, e.g. ubuntu-raring-x64 
-from http://cloud-images.ubuntu.com/
+
+Checkout code
+
+	git clone https://github.com/lonsbio/bpipe-vagrant.git
+	cd bpipe-vagrant
+
+Add a vagrant box and name it in line with manifests/init.pp, e.g. ubuntu-raring-x64 from http://cloud-images.ubuntu.com/
 
 	vagrant add ubuntu-raring-x64 http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box
 
-Download required binaries to the files folder. Start machine from the top level directory. This will be /vagrant inside your VM. Source code will be in /home/vagrant/bpipe 
+Copy the required binaries to the files folder, e.g.
+
+	cp /PATH/TO/BPIPE_DOWNLOADS/* files/*
+
+ Start machine from the top level directory. This will be /vagrant inside your VM. Source code will be in /home/vagrant/bpipe 
 
 	vagrant up
 
@@ -40,12 +57,6 @@ Run bpipe
 
 Edit the source, build, commit etc
 
-
-Caveats
-----
-- Uses a mixture of shell and Puppet provisioning - the order is fixed at the moment
-- GridGain source files are removed from the git clone - include the binary and remove this step from init.pp if you want GridGain support 
-- Tested on Ubuntu 13.04 x64 VM
 
 License
 ----
@@ -73,7 +84,7 @@ per https://code.google.com/p/bpipe/wiki/DevelopmentSetup
 
 	gradle-1.0-all.zip
 	groovy-binary-1.8.9.zip
-	mail.jar
+	mail.jar			--> from JavaMail
 	jdk-6u35-linux-x64.bin 		--> or equivalent for your box
 
 Any changes to the Java, Groovy or Gradle versions need to be reflected in manifests/init.pp as well.
