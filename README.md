@@ -52,7 +52,7 @@ License
 MIT license, see LICENSE
 
 
-### Customisation ###
+## Customisation ##
 
 ####Vagrantfile####
 Customise the following:

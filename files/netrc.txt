@@ -1,0 +1,3 @@
+machine code.google.com 
+login <google code email>
+password <google generated password>
