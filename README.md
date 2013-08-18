@@ -15,19 +15,29 @@ Add a vagrant box and name it in line with manifests/init.pp, e.g. ubuntu-raring
 from http://cloud-images.ubuntu.com/
 
 	vagrant add ubuntu-raring-x64 http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box
-Download required binries to the files folder
-Start machine from the top level directory. This will be /vagrant inside your VM. Source code will be in /home/vagrant/bpipe 
+
+Download required binaries to the files folder. Start machine from the top level directory. This will be /vagrant inside your VM. Source code will be in /home/vagrant/bpipe 
+
 	vagrant up
+
 Enter machine
+
 	vagrant ssh
+
 Build the source code 
+
 	cd /home/vagrant/bpipe
 	gradle dist
+
 Run tests
+
 	cd /home/vagrant/bpipe/tests
 	./run.sh 
+
 Run bpipe
+
 	./bin/bpipe
+
 Edit the source, build, commit etc
 
 
