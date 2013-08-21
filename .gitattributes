@@ -2,8 +2,11 @@
 # Native Set default behaviour, in case users don't have core.autocrlf set.
 * text=auto
 
+Vagrantfile text
+*.conf text
+
 # VM's will be Unix-like, so we ensure LF line endings for files that will be imported inside the box
-*.txt text eol=crlf
-*.pp text eol=crlf
-*.sh text eol=crlf
+*.txt text eol=lf
+*.pp text eol=lf
+*.sh text eol=lf
 
