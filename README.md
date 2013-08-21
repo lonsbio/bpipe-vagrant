@@ -25,7 +25,7 @@ Checkout code. Requires command line git. Download manually from GitHub otherwis
 	git clone https://github.com/lonsbio/bpipe-vagrant.git
 	cd bpipe-vagrant
 
-Get the required additional binaries and place them in the `files` directory. See the Files section below for detail. Note: Java 1.6 and JarMail may require login to download. Groovy and Gradle can be downloaded directly. For example, using wget on the command line:
+Get the required additional binaries and place them in the `files` directory. See the Files section below for detail. Note: Java 1.6 and JavaMail may require login to download. Groovy and Gradle can be downloaded directly. For example, using wget on the command line:
 
 	wget -P files http://dist.groovy.codehaus.org/distributions/groovy-binary-1.8.9.zip 
 	wget -P files http://services.gradle.org/distributions/gradle-1.0-all.zip
