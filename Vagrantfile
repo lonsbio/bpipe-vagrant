@@ -15,7 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      puppet.manifest_file  = "init.pp"
      #puppet.module_path = "modules"
      puppet.options = "--fileserverconfig=/vagrant/files.conf"
-     puppet.facter = { "repo" => "https://code.google.com/p/bpipe/"}
+     puppet.facter = { "repo" => "https://andrew.lonsdale%40lonsbio.com.au@code.google.com/r/andrewlonsdale-bpipe-dev/"}
    end
 
 end
