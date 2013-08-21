@@ -1,0 +1,9 @@
+# Taken from: https://help.github.com/articles/dealing-with-line-endings
+# Native Set default behaviour, in case users don't have core.autocrlf set.
+* text=auto
+
+# VM's will be Unix-like, so we ensure LF line endings for files that will be imported inside the box
+*.txt text eol=crlf
+*.pp text eol=crlf
+*.sh text eol=crlf
+
