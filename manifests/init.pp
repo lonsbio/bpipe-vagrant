@@ -14,12 +14,18 @@
       source => "puppet:///files/gitconfig.txt"
     }
 
-    #file {'netrc':
-    #      path    => '/home/vagrant/.netrc',
-    #      ensure  => present,
-    #      mode    => 0600,
-    #      source => "puppet:///files/netrc.txt"
-    #    }
+# If working on a development branch on google code, .netrc may be useful.
+# (1) Uncomment the following to have .netrc included in the VM
+# (2) To prevent your login details being made public, ignore any changes to netrc.txt
+# 	git update-index --assume-unchanged files/netrc.txt
+# (3)Edit files/netrc.txt
+#
+#    file {'netrc':
+#      path    => '/home/vagrant/.netrc',
+#      ensure  => present,
+#      mode    => 0600,
+#      source => "puppet:///files/netrc.txt"
+#     }
 
     file {'bashrc':
       path    => '/home/vagrant/.bashrc',
