@@ -20,12 +20,12 @@
 # 	git update-index --assume-unchanged files/netrc.txt
 # (3)Edit files/netrc.txt
 #
-#    file {'netrc':
-#      path    => '/home/vagrant/.netrc',
-#      ensure  => present,
-#      mode    => 0600,
-#      source => "puppet:///files/netrc.txt"
-#     }
+    file {'netrc':
+      path    => '/home/vagrant/.netrc',
+      ensure  => present,
+      mode    => 0600,
+      source => "puppet:///files/netrc.txt"
+     }
 
     file {'bashrc':
       path    => '/home/vagrant/.bashrc',
