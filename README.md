@@ -25,6 +25,10 @@ Checkout code. Requires command line git. Download manually from GitHub otherwis
 	git clone https://github.com/lonsbio/bpipe-vagrant.git
 	cd bpipe-vagrant
 
+Edit files/gitconfig.txt to ensure changes are pushed under your name:
+
+	vi files/gitconfig.txt 
+
 Get the required additional binaries and place them in the `files` directory. See the Files section below for detail. Note: Java 1.6 and JavaMail may require login to download. Groovy and Gradle can be downloaded directly. For example, using wget on the command line:
 
 	wget -P files http://dist.groovy.codehaus.org/distributions/groovy-binary-1.8.9.zip 
@@ -77,7 +81,7 @@ Customise the following:
 Configuration files that are served to the Puppet provisioner:
 
 	bashrc.txt = ~/.bashrc 		--> based on Ubuntu 13.04 default bashrc, defines JAVE_HOME, GROOVY_HOME and GRADLE_HOME
-	gitconfig.txt = ~/.gitconf 	--> username and email address for git
+	gitconfig.txt = ~/.gitconf 	--> name and email address for git
 	netrc.txt = ~/.netrc		--> allow git automation if accessing a non-public repository (optional)
 
 In addition to the configuration files, the following need to be obtained and included in this folder as 
