@@ -1,4 +1,5 @@
-# from fork: https://github.com/lonsbio/slurm_vagrant_cluster
+# See Guillermo Carrasco's blog post: http://mussolblog.wordpress.com/
+# fork: https://github.com/lonsbio/slurm_vagrant_cluster
 ClusterName=testing
 ControlMachine=vagrant-ubuntu-raring-64
 SlurmUser=slurm
