@@ -14,6 +14,13 @@
       source => "puppet:///files/gitconfig.txt"
     }
 
+  file {'slurmconfig':
+      path    => '/etc/slurm-llnl/slurm.conf',
+      ensure  => present,
+      mode    => 0644,
+      source => "puppet:///files/slurmconf.txt"
+    }
+
 # If working on a development branch on google code, .netrc may be useful.
 # (1) Uncomment the following to have .netrc included in the VM
 # (2) To prevent your login details being made public, ignore any changes to netrc.txt
