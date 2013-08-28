@@ -83,6 +83,7 @@ Configuration files that are served to the Puppet provisioner:
 	bashrc.txt = ~/.bashrc 		--> based on Ubuntu 13.04 default bashrc, defines JAVE_HOME, GROOVY_HOME and GRADLE_HOME
 	gitconfig.txt = ~/.gitconf 	--> name and email address for git
 	netrc.txt = ~/.netrc		--> allow git automation if accessing a non-public repository (optional)
+	slurmconf.txt = /etc/slurm-llnl/slurm.conf --> basic single machine slurm configuration
 
 In addition to the configuration files, the following need to be obtained and included in this folder as 
 per https://code.google.com/p/bpipe/wiki/DevelopmentSetup 
