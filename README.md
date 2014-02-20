@@ -7,7 +7,7 @@ Prerequisites
 ----
 - Vagrant (http://www.vagrantup.com/) installed
 - Virtualbox (https://www.virtualbox.org/) installed
-- Additional binaries for Groovy, Gradle, Java and JavaMail - See Files below.
+- Additional binaries for Groovy and Java - See Files below.
 
 Caveats
 ----
@@ -25,10 +25,9 @@ Checkout code. Requires command line git. Download manually from GitHub otherwis
 	git clone https://github.com/lonsbio/bpipe-vagrant.git
 	cd bpipe-vagrant
 
-Get the required additional binaries and place them in the `files` directory. See the Files section below for detail. Note: Java 1.6 and JavaMail may require login to download. Groovy and Gradle can be downloaded directly. For example, using wget on the command line:
+Get the required additional binaries and place them in the `files` directory. See the Files section below for detail. Note: Java may require login to download. Groovy can be downloaded directly. For example, using wget on the command line:
 
-	wget -P files http://dist.groovy.codehaus.org/distributions/groovy-binary-1.8.9.zip 
-	wget -P files http://services.gradle.org/distributions/gradle-1.0-all.zip
+	wget -P files http://dist.groovy.codehaus.org/distributions/groovy-binary-2.2.1.zip
 
 Add a vagrant box and name it in line with manifests/init.pp, e.g. ubuntu-raring-x64 from http://cloud-images.ubuntu.com/
 
@@ -45,7 +44,7 @@ Enter machine
 Build the source code 
 
 	cd /home/vagrant/bpipe
-	gradle dist
+	./gradlew dist
 
 Run tests.
 
@@ -85,16 +84,14 @@ per https://code.google.com/p/bpipe/wiki/DevelopmentSetup
 
 For example:
 
-	gradle-1.0-all.zip
 	groovy-binary-1.8.9.zip
-	mail.jar			--> from JavaMail
 	jdk-6u35-linux-x64.bin 		--> This can be any Java 1.6 JDK compatible with your virtual box
 
-Any changes to the Java, Groovy or Gradle versions need to be reflected in manifests/init.pp as well.
+Any changes to the Java or Groovy versions need to be reflected in manifests/init.pp as well.
 
 ####Manifest####
 
 Manifest by default assumes:
-- Gradle 1.0, Groovy 1.8.9 and Java 6u35 x64. 
+- Groovy 2.2.1 and Java 6u35 x64. 
 - .netrc is not required
 
