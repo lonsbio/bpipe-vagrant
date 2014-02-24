@@ -84,14 +84,14 @@ per https://code.google.com/p/bpipe/wiki/DevelopmentSetup
 
 For example:
 
-	groovy-binary-1.8.9.zip
-	jdk-6u35-linux-x64.bin 		--> This can be any Java 1.6 JDK compatible with your virtual box
+	groovy-binary-2.2.1.zip
+	jdk-7u51-linux-x64.tar.gz		
 
 Any changes to the Java or Groovy versions need to be reflected in manifests/init.pp as well.
 
 ####Manifest####
 
 Manifest by default assumes:
-- Groovy 2.2.1 and Java 6u35 x64. 
+- Groovy 2.2.1 and Java 7u51 x64. 
 - .netrc is not required
 
