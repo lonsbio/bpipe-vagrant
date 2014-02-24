@@ -117,12 +117,9 @@ fi
 GROOVY_HOME="/home/vagrant/groovy"
 export GROOVY_HOME
 
-JAVA_HOME="/usr/local/bin/java/jdk1.6.0_35/"
+JAVA_HOME="/usr/local/bin/java/jdk1.7.0_51/"
 export JAVA_HOME
 
-GRADLE_HOME="/home/vagrant/gradle"
-export GRADLE_HOME
-
-PATH="$JAVA_HOME/bin:$GROOVY_HOME/bin:$GRADLE_HOME/bin:$PATH"
+PATH="$JAVA_HOME/bin:$GROOVY_HOME/bin:$PATH"
 export PATH
 

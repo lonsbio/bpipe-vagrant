@@ -35,12 +35,12 @@
       source => "puppet:///files/groovy-binary-2.2.1.zip"
     }
 
-    file {'javajdk1.6':
-      path    => '/usr/local/bin/java/jdk-6u35-linux-x64.bin',
+    file {'java':
+      path    => '/usr/local/bin/java/jdk-7u51-linux-x64.tar.gz',
       ensure  => present,
       mode    => 0644,
-      source => "puppet:///files/jdk-6u35-linux-x64.bin",
- 	before => Exec["sudo bash /usr/local/bin/java/jdk-6u35-linux-x64.bin"]
+      source => "puppet:///files/jdk-7u51-linux-x64.tar.gz",
+ 	before => Exec["sudo tar -xvzf /usr/local/bin/java/jdk-7u51-linux-x64.tar.gz"]
     }
 
 
@@ -67,21 +67,21 @@ exec { "git clone $repo bpipe":
   path    => ["/usr/bin", "/usr/sbin"]
 }
 
-exec {"sudo bash /usr/local/bin/java/jdk-6u35-linux-x64.bin":
+exec {"sudo tar -xvzf /usr/local/bin/java/jdk-7u51-linux-x64.tar.gz":
  cwd     => "/usr/local/bin/java",
-  creates => "/usr/local/bin/java/jdk1.6.0_35",
+  creates => "/usr/local/bin/java/jdk1.7.0_51",
   path    => ["/usr/bin", "/usr/sbin"]
 }
 
-exec {"unzip groovy-binary-1.8.9.zip":
+exec {"unzip groovy-binary-2.2.1.zip":
  cwd     => "/home/vagrant",
-  creates => "/home/vagrant/groovy-1.8.9/",
+  creates => "/home/vagrant/groovy-2.2.1/",
   path    => ["/usr/bin", "/usr/sbin"],
    require => File['groovy'],
-    before => Exec["ln -s /home/vagrant/groovy-1.8.9/ /home/vagrant/groovy"]
+    before => Exec["ln -s /home/vagrant/groovy-2.2.1/ /home/vagrant/groovy"]
 }
 
-exec {"ln -s /home/vagrant/groovy-1.8.9/ /home/vagrant/groovy":
+exec {"ln -s /home/vagrant/groovy-2.2.1/ /home/vagrant/groovy":
 	cwd => "/home/vagrant/",
        creates => "/home/vagrant/groovy/",	
   path    => ["/bin", "/usr/sbin"]
