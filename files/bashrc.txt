@@ -113,6 +113,42 @@ if ! shopt -oq posix; then
   fi
 fi
 
+################################
+# From: /usr/share/modules/init/bash
+
+if [ "${MODULE_VERSION:-}" = "" ]; then
+        MODULE_VERSION_STACK="3.2.10"
+        MODULE_VERSION="3.2.10"
+        export MODULE_VERSION
+else
+        MODULE_VERSION_STACK="$MODULE_VERSION"
+fi
+export MODULE_VERSION_STACK
+
+module() { eval `/usr/bin/modulecmd bash $*`; }
+export -f module
+
+MODULESHOME=/usr/share/modules
+export MODULESHOME
+
+if [ "${LOADEDMODULES:-}" = "" ]; then
+  LOADEDMODULES=
+  export LOADEDMODULES
+fi
+
+if [ "${MODULEPATH:-}" = "" ]; then
+  MODULEPATH=`sed -n 's/[       #].*$//; /./H; $ { x; s/^\n//; s/\n/:/g; p; }' ${MODULESHOME}/init/.modulespath`
+  export MODULEPATH
+fi
+
+if [ ${BASH_VERSINFO:-0} -ge 3 ] && [ -r ${MODULESHOME}/init/bash_completion ]; then
+ . ${MODULESHOME}/init/bash_completion
+fi
+
+################################
+
+
+
 #export var 
 GROOVY_HOME="/home/vagrant/groovy"
 export GROOVY_HOME

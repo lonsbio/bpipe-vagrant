@@ -66,14 +66,6 @@ exec {'chown -R vagrant /home/vagrant/bpipe':
  	require => Exec["git clone $repo bpipe"]
     }
 
-#Gridgain dependency currently tricky - removing executor source for the moment. 
-#exec {'mv bpipe/src/main/groovy/bpipe/executor/Gridgain* /home/vagrant/removed/':
-#      cwd     => '/home/vagrant/',
-#	creates => '/home/vagrant/removed/GridgainProvider.groovy',
-#  path    => ["/bin", "/usr/sbin"],
-# 	require => Exec["git clone $repo bpipe"]
-#    }
-
 exec { "git clone $repo bpipe":
   cwd     => "/home/vagrant/",
   creates => "/home/vagrant/bpipe",
