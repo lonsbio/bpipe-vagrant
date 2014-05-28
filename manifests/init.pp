@@ -49,11 +49,11 @@
     }
 
     file {'java':
-      path    => '/usr/local/bin/java/jdk-7u51-linux-x64.tar.gz',
+      path    => '/usr/local/bin/java/jdk-7u55-linux-x64.tar.gz',
       ensure  => present,
       mode    => 0644,
-      source => "puppet:///files/jdk-7u51-linux-x64.tar.gz",
- 	before => Exec["sudo tar -xvzf /usr/local/bin/java/jdk-7u51-linux-x64.tar.gz"]
+      source => "puppet:///files/jdk-7u55-linux-x64.tar.gz",
+ 	before => Exec["sudo tar -xvzf /usr/local/bin/java/jdk-7u55-linux-x64.tar.gz"]
     }
 
 
@@ -72,9 +72,9 @@ exec { "git clone $repo bpipe":
   path    => ["/usr/bin", "/usr/sbin"]
 }
 
-exec {"sudo tar -xvzf /usr/local/bin/java/jdk-7u51-linux-x64.tar.gz":
+exec {"sudo tar -xvzf /usr/local/bin/java/jdk-7u55-linux-x64.tar.gz":
  cwd     => "/usr/local/bin/java",
-  creates => "/usr/local/bin/java/jdk1.7.0_51",
+  creates => "/usr/local/bin/java/jdk1.7.0_55",
   path    => ["/usr/bin", "/usr/sbin"]
 }
 
